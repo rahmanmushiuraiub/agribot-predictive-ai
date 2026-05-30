@@ -1,0 +1,69 @@
+{
+  "project": "AgriBot v4 \u2014 Agricultural Advisory Chatbot",
+  "evaluation_date": "2026-05-30",
+  "task_1_recommendation": {
+    "title": "Crop Recommendation \u2014 RF vs XGBoost",
+    "winner": "RandomForest",
+    "RandomForest": {
+      "accuracy": 0.9955,
+      "f1_macro": 0.9955,
+      "note": "Baseline production model"
+    },
+    "XGBoost": {
+      "accuracy": 0.9909,
+      "f1_macro": 0.9909,
+      "cv_mean": 0.9941,
+      "note": "Comparison model \u2014 gradient boosting"
+    }
+  },
+  "task_2_nlp_intent": {
+    "title": "NLP Intent Classification \u2014 DistilBERT vs BERT",
+    "winner": "Run train_bert_intent.py for comparison",
+    "test_set_accuracy_distilbert": 0.98,
+    "DistilBERT": {},
+    "BERT": {},
+    "slide_table": []
+  },
+  "task_3_disease": {
+    "title": "Disease Detection/Classification",
+    "EfficientNet": {},
+    "YOLO": {},
+    "comparison": [],
+    "recommendation": "EfficientNet for classification, YOLO for detection"
+  },
+  "task_4_fertilizer": {
+    "title": "Fertilizer Recommendation",
+    "model": "RandomForest (agronomic rule-based synthetic data)",
+    "accuracy": 0.9759,
+    "method": "agronomic-rule-based synthetic data (N/P/K deficit logic)",
+    "classes": [
+      "10-26-26",
+      "14-35-14",
+      "17-17-17",
+      "20-20",
+      "28-28",
+      "DAP",
+      "Urea"
+    ]
+  },
+  "live_test": {
+    "total_queries": 100,
+    "overall_accuracy": 0.98,
+    "per_intent": {
+      "crop_recommendation": 1.0,
+      "fertilizer_advice": 1.0,
+      "crop_disease": 1.0,
+      "weather_planting": 0.92
+    }
+  },
+  "new_components": [
+    "XGBoost crop recommendation (comparison model)",
+    "Full BERT intent classifier (comparison model)",
+    "EfficientNetB0 plant disease classifier",
+    "YOLOv8n plant disease detector",
+    "OpenWeatherMap API integration (live weather)",
+    "Reasoning engine (dosage + suitability rules)",
+    "State profiles from 1997-2020 data (30 Indian states)",
+    "Yield prediction regressor (R\u00b2=0.99)"
+  ]
+}
